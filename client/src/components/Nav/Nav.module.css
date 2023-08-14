@@ -1,0 +1,83 @@
+/* Nav.module.css */
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out, border-bottom 0.1s ease-in-out;
+}
+
+.navLink:hover {
+  color: #007bff;
+  border-bottom: 2px solid #007bff;
+}
+
+.navInput {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 180px;
+}
+
+.navButton {
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: #0056b3;
+}
+
+.navSelect {
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.navSelect option {
+  font-weight: 500;
+}
+
+.activeLink {
+  color: #007bff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .navContainer {
+    flex-direction: column;
+    width: 90%; /* Cambia el ancho del contenedor para adaptarse al espacio disponible */
+    padding: 20px; /* Aumenta el espaciado interno en dispositivos pequeños */
+  }
+
+  .navLink {
+    margin-bottom: 10px; /* Espaciado entre elementos en dispositivos pequeños */
+  }
+
+  .navInput {
+    width: 100%; /* Ancho completo para el campo de entrada en dispositivos pequeños */
+  }
+
+  .navSelect {
+    margin-top: 10px; /* Espaciado superior para el select en dispositivos pequeños */
+  }
+}

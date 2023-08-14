@@ -1,0 +1,17 @@
+.contenedorHome {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* background-color: red; */
+  width: 90%;
+  margin: 0 auto;
+}
+
+.recetas {
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.menu {
+  background-color: green!;
+}

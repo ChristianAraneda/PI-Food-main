@@ -1,0 +1,29 @@
+/* Paged.module.css */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pageBtn {
+  padding: 6px 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 14px; /* Ajusta el tamaño de fuente si es necesario */
+}
+
+.pageBtn:hover {
+  background-color: #2980b9;
+}
+
+.pageBtn[disabled] {
+  background-color: #ccc;
+}
+
+/* ... (otros estilos) */

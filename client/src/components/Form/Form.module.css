@@ -1,0 +1,210 @@
+.mainCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.cardCont {
+  background-color: #f9f6f4dc;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: left;
+  margin-top: 20px;
+  animation: fadeIn 0.3s ease-in-out backwards;
+  border-radius: 1rem;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.cardCont label {
+  margin-bottom: 0.5rem;
+}
+.cardCont label:not(:first-child) {
+  margin-top: 20px;
+}
+
+.cardCont textarea {
+  resize: none;
+  flex: 1;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+  flex-wrap: wrap;
+  /* margin-top: 5px; */
+}
+
+.cardCont input {
+  /* background-color: aqua; */
+  flex: 1;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+  flex-wrap: wrap;
+
+  /* margin-top: 5px; */
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.tagBox {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.tagBox input {
+  min-width: 100px;
+}
+
+.tagBox ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.tagBox ul li {
+  list-style: none;
+  margin: 4px 3px;
+  border-radius: 5px;
+  background: #f2f2f2;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid #e3d1e1;
+}
+
+.tagBox ul li i {
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0px 3px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #dfdfdf;
+  justify-content: center;
+}
+
+.tagBox ul input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.contStep {
+  width: 100%;
+  margin: 0px;
+  padding: 10px;
+  background: #828282;
+}
+
+.botonesStep {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  padding-top: 10px;
+}
+
+.botonAgregar,
+.botonBorrar {
+  flex: 1;
+  margin: 0 5px;
+  background-color: #ffa15e; /* Color de fondo en tono pastel más vivo */
+  color: #333; /* Texto en color gris oscuro */
+  border: none; /* Sin borde */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border-radius: 8px; /* Borde redondeado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.botonAgregar {
+  background-color: #6fe47a; /* Color de fondo en tono pastel más vivo */
+}
+
+.botonBorrar {
+  background-color: #ff6f6f; /* Color de fondo en tono pastel más vivo */
+}
+
+.botonAgregar:hover {
+  background-color: #4c9e4c; /* Verde oscuro en el hover */
+  color: white; /* Texto en color blanco */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombreado en el hover */
+}
+
+.botonBorrar:hover {
+  background-color: #a23636; /* Rojo oscuro en el hover */
+  color: white; /* Texto en color blanco */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombreado en el hover */
+}
+.botonAgregar:disabled {
+  background-color: #ccc; /* Color gris para botón deshabilitado */
+  color: #666; /* Texto en color gris más claro */
+}
+
+.botonBorrar:disabled {
+  background-color: #ccc; /* Color gris para botón deshabilitado */
+  color: #666; /* Texto en color gris más claro */
+}
+
+.botonEnviar {
+  margin-top: 20px;
+  background-color: #007bff; /* Color azul empresarial */
+  color: white; /* Texto en color blanco */
+  border: none; /* Sin borde */
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  border-radius: 8px; /* Borde redondeado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.botonEnviar:hover {
+  background-color: #0056b3; /* Azul más oscuro en el hover */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Sombreado en el hover */
+}
+
+.botonEnviar:disabled {
+  background-color: #ccc; /* Color gris para botón deshabilitado */
+  cursor: not-allowed; /* Cambiar cursor a "no permitido" */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

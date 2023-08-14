@@ -1,0 +1,111 @@
+/* Detail.module.css */
+.mainCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.cardCont {
+  background-color: white;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cardCont2 {
+  background-color: #f9f6f4cb; /* Ajusta este color para que coincida con el de las cards */
+  width: 70%;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cardCont > div,
+.cardCont2 > details {
+  flex: 1;
+  padding: 10px;
+}
+
+.cardCont img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cardCont h1 {
+  font-size: 24px;
+  margin-top: 10px;
+  color: #333333;
+}
+
+.cardCont h2 {
+  font-size: 0.6rem;
+  color: darkslategrey;
+  text-overflow: ellipsis;
+}
+
+.cardCont span p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.cardCont2 {
+  background-color: #f9f6f4; /* Ajusta este color para que coincida con el de las cards */
+  width: 70%;
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.cardCont2 details {
+  text-align: left; /* Ajusta la alineación de las instrucciones de preparación */
+  margin-top: 15px;
+}
+
+.cardCont2 summary {
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  /* margin-top: 10px; */
+  color: #007bff;
+}
+
+.cardCont .dietType {
+  cursor: pointer;
+  display: inline-block;
+  margin: 4px 3px;
+  border-radius: 5px;
+  background: #f2f2f2;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid #e3d1e1;
+  transition: background 0.3s ease;
+}
+
+.cardCont .dietType:hover {
+  background: #f2c94c;
+}
+
+.closeButton {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  background-color: #ff0000; /* Rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.closeButton:hover {
+  background-color: #cc0000; /* Rojo más oscuro al hacer hover */
+}
