@@ -29,7 +29,7 @@ const infoCleaner = (arr) =>
 
 const getAllRecipes = async () => {
   try {
-    // const infoDATA = infoCleaner(data.results);
+    const infoDATA = infoCleaner(data.results);
     const recipeDB = await Recipe.findAll({
       include: {
         model: Diets,
@@ -47,12 +47,12 @@ const getAllRecipes = async () => {
       dietTypes: recipe.dietTypes.map((diet) => diet.name),
     }));
 
-    const infoAPI = (
-      await instance(
-        `/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
-      )
-    ).data.results;
-    const infoDATA = infoCleaner(infoAPI);
+    // const infoAPI = (
+    //   await instance(
+    //     `/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
+    //   )
+    // ).data.results;
+    // const infoDATA = infoCleaner(infoAPI);
 
     return [...transformedRecipeDB, ...infoDATA];
   } catch (error) {
@@ -100,10 +100,10 @@ const getRecipeByName = async (name) => {
 const getUserById = async (idReci, source) => {
   if (source === "api") {
     try {
-      const infoAPI = (
-        await instance(`/${idReci}/information?apiKey=${API_KEY}`)
-      ).data;
-      // const infoAPI = data.results.find((recipe) => recipe.id == idReci);
+      // const infoAPI = (
+      //   await instance(`/${idReci}/information?apiKey=${API_KEY}`)
+      // ).data;
+      const infoAPI = data.results.find((recipe) => recipe.id == idReci);
       // console.log(infoAPI);
 
       const recipeDetail = {
