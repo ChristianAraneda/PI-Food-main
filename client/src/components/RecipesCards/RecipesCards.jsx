@@ -1,18 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllRecipes, orderRecipes } from "../../redux/actions";
 import Card from "../Card/Card";
 import style from "./RecipesCards.module.css";
 import Paged from "../Paged/Paged";
 
 export default function RecipesCards() {
   const allRecipes = useSelector((state) => state.recipes);
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getAllRecipes());
-  }, []);
 
   const CARDS_X_PAGES = 9;
 
@@ -23,8 +16,6 @@ export default function RecipesCards() {
     firstRecipePage,
     quantityRecipesPage
   );
-
-  const [modal1, setmodal1] = useState(false);
 
   useEffect(() => {
     setPage(1);

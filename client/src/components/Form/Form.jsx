@@ -6,8 +6,6 @@ import * as Unicons from "@iconscout/react-unicons/";
 import Nav from "../Nav/Nav";
 import { validation } from "./_validation";
 
-let pasoNum = 0;
-
 const Form = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   //DIET TAGS
@@ -38,7 +36,6 @@ const Form = () => {
     if (event.target.name === "DietTypes" && event.target.value.trim() !== "") {
       const value = event.target.value;
       if (tags.includes(value)) {
-        // El valor ya existe en el array, no lo agregamos nuevamente
         setInputDieta("");
         event.preventDefault();
         return;
@@ -89,7 +86,7 @@ const Form = () => {
     event.preventDefault();
     if (step.length > 0) {
       const newSteps = [...step];
-      newSteps.pop(); // Elimina el último elemento del array
+      newSteps.pop();
       setStep(newSteps);
     }
   };
@@ -151,11 +148,7 @@ const Form = () => {
   };
 
   const handleAddAnotherRecipe = () => {
-    // Mostrar el formulario nuevamente
-
     setFormSubmitted(false);
-
-    // También puedes restablecer los datos del formulario si lo deseas
   };
 
   return (

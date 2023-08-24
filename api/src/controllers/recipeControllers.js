@@ -29,7 +29,7 @@ const infoCleaner = (arr) =>
 
 const getAllRecipes = async () => {
   try {
-    const infoDATA = infoCleaner(data.results);
+    // const infoDATA = infoCleaner(data.results);
     const recipeDB = await Recipe.findAll({
       include: {
         model: Diets,
@@ -47,17 +47,16 @@ const getAllRecipes = async () => {
       dietTypes: recipe.dietTypes.map((diet) => diet.name),
     }));
 
-    /* const infoAPI = (
+    const infoAPI = (
       await instance(
         `/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
       )
-    ).data.results; */
-    // const recipeAPI = infoCleaner(infoDATA);
+    ).data.results;
+    const infoDATA = infoCleaner(infoAPI);
 
     return [...transformedRecipeDB, ...infoDATA];
   } catch (error) {
-    console.log("mira", error);
-    // console.log("segundo", recipeDB);
+    console.log("Hubo un error", error);
     return [
       ["La API no esta funcionando, te enviamos solo los resultados de la DB"],
     ];
@@ -125,6 +124,7 @@ const getUserById = async (idReci, source) => {
 
       return recipeDetail;
     } catch (error) {
+      console.log(error);
       throw Error("La API esta caida");
     }
   } else {
@@ -140,12 +140,11 @@ const getUserById = async (idReci, source) => {
     });
     const dietNames = recipe.dietTypes.map((diet) => diet.name);
 
-    // Creamos un nuevo objeto con las propiedades de la receta y el array de dietas
     const recipeDetail = {
       image: recipe.image,
       name: recipe.name,
       dishTypes: recipe.dishTypes,
-      dietTypes: dietNames, // Aquí usamos el array de nombres de dietas
+      dietTypes: dietNames,
       summary: recipe.summary,
       score: recipe.score,
       healthScore: recipe.healthScore,
@@ -177,16 +176,13 @@ const createRecipeDB = async (
 
   if (diets) {
     console.log(diets);
-    // Buscar o crear el modelo Diets con el nombre de la dieta
     const dietModels = await Promise.all(
       diets.map((diet) => Diets.findOrCreate({ where: { name: diet } }))
     );
-    // console.log(dietModels);
-    // let dietDb = await Diets.findOrCreate({ where: { name: diet } });
-    // // console.log(dietDb.length);
+
     await recipeCreate[`addDietTypes`](dietModels.map((model) => model[0]));
 
-    // return "La receta se creo exitosamente";
+    return "La receta se creo exitosamente";
   }
 };
 

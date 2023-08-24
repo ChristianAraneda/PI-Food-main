@@ -10,7 +10,7 @@ const recipesRouter = express.Router();
 
 recipesRouter.get("/:idReci", getRecipeDetailHandler);
 recipesRouter.get("/", getRecipeByNameHandler);
-// recipesRouter.get("/all", getAllRecipeHandler);
 recipesRouter.post("/", postNewRecipeHandler);
+// recipesRouter.get("/all", getAllRecipeHandler);
 
 module.exports = recipesRouter;

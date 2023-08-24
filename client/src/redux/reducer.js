@@ -36,7 +36,6 @@ const rootReducer = (state = initialState, { type, payload }) => {
       return {
         ...state,
         recipes: payload,
-        // allRecipes: payload,
       };
 
     case DIET_TYPE_FILTER:

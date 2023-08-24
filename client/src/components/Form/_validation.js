@@ -37,7 +37,7 @@ export function validation(inputs) {
   for (let i = 0; i < inputs.steps.length; i++) {
     if (!inputs.steps[i].step || inputs.steps[i].step.trim() === "") {
       errors.steps = "No se permite agregar un paso vacío";
-      break; // Detener la validación si se encuentra un paso vacío
+      break;
     }
   }
 

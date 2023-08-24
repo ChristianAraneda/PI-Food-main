@@ -4,7 +4,7 @@ const { Diets } = require("../db");
 
 const getDietsList = async () => {
   try {
-    const allRecipes = await getAllRecipes();
+    // const allRecipes = await getAllRecipes();
     const dietsSet = new Set();
     const dataDB = await data.results;
     if (dataDB && Array.isArray(dataDB)) {
@@ -21,7 +21,7 @@ const getDietsList = async () => {
       dietsArray.map((diet) => Diets.findOrCreate({ where: { name: diet } }))
     );
     const dietTypes = await Diets.findAll();
-    console.log(dietTypes);
+    // console.log(dietTypes);
     return dietTypes;
   } catch (error) {
     console.log(error);

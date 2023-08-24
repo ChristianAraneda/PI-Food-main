@@ -49,28 +49,6 @@
   display: block;
   border-bottom: 3px solid rgba(255, 255, 255, 0.5);
 }
-
-.animationheart::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: -50%;
-  right: 0;
-  background: inherit;
-  border-radius: 50%;
-}
-
-.animationheart::before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  top: 0;
-  right: -50%;
-  background: inherit;
-  border-radius: 50%;
-}
 .tagCont {
   flex-grow: 1;
   display: flex;

@@ -6,7 +6,7 @@ const {
 } = require("../controllers/recipeControllers");
 
 const getRecipeDetailHandler = async (req, res) => {
-  const { idReci } = req.params;
+  const { idReci } = req.query;
   const source = isNaN(idReci) ? "db" : "api";
   try {
     const response = await getUserById(idReci, source);

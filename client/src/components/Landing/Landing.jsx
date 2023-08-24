@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import style from "./Landing.module.css";
 import img from "../../Images/cooking.png";
+import { useEffect } from "react";
+import { getAllRecipes } from "../../redux/actions";
+import { useDispatch } from "react-redux";
 
 export default function Landing() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllRecipes());
+  }, []);
+
   return (
     <div className={style.landingContainer}>
       <div className={style.landingContent}>

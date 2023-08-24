@@ -43,9 +43,7 @@ const Detail = () => {
           <span>Health Score: {recipes.healthScore}</span>
         </div>
         <div style={{ position: "relative" }}>
-          <button
-            className={style.closeButton}
-            onClick={() => navegate("/home")}>
+          <button className={style.closeButton} onClick={() => navegate(-1)}>
             ✖
           </button>
           <h1>{recipes.name}</h1>
